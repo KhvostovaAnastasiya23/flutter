@@ -5,6 +5,7 @@ import 'first_page_home.dart';
 
 class FirstPage extends State<FirstPageHome> {
   late PageController pageController;
+  int _currentPage = 0;
 
   var heroes = ["Thor", "Hulk", "Iron Man"];
 
@@ -13,6 +14,14 @@ class FirstPage extends State<FirstPageHome> {
   @override
   void initState() {
     super.initState();
+    Timer.periodic(Duration(seoncds: 4), (Timer timer) {
+      if (_currentPage < 2) {
+        _curentPage++;
+      } else {
+        _currentPage = 0;
+      }
+      pageController.animateToPage(_currentPage, duration: Duration(milliseconds: 350), curve: Curves.easeIn);
+    }
     pageController = PageController(initialPage: 0, viewportFraction: 0.9);
   }
 
