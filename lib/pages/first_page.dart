@@ -14,7 +14,7 @@ class FirstPage extends State<FirstPageHome> {
   @override
   void initState() {
     super.initState();
-    Timer.periodic(Duration(seoncds: 4), (Timer timer) {
+    Timer.periodic(Duration(seconds: 4), (Timer timer) {
       if (_currentPage < 2) {
         _curentPage++;
       } else {
